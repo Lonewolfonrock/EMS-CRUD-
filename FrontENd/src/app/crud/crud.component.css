@@ -1,0 +1,64 @@
+
+header{
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 25px;
+    background-color: rgb(224, 255, 113);
+    padding: 25px 0px;
+    align-items: center;
+}
+.add_div{
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+}
+.input_section{
+    font-family: sans-serif;
+    align-items: center;
+    margin: 5% auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+.input_section>div>input{
+    width: 100%;
+    max-width: 200px;
+    min-width: 150px;
+    margin: 0px 20px;
+    padding:  5px;
+    border-radius: 5px;
+    background-color: rgb(243, 228, 210);
+}
+#b1{
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(245, 162, 162);
+}
+
+.get_all{
+    display: flex;
+    justify-content: center;
+    
+}
+
+@media screen and (max-width: 600px) {
+    .input_section{
+        display: flex;
+        flex-direction: column;
+    }
+ 
+  
+    .input_section > div>input {
+        align-items: center;
+        width: 100%;
+        max-width: 190px; 
+        min-width: 100px; 
+        margin: 0px;
+    }
+    
+}
