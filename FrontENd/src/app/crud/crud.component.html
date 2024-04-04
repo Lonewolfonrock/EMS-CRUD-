@@ -39,14 +39,14 @@
           <th>ImageUrl</th>
           <th>EmployeeCode</th>
         </tr>
-        <tr>
-          <td>Alfreds Futterkiste</td>
-          <td>Maria Anders</td>
-          <td>Germany</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr *ngFor="let Emp of Employe">
+          <td>{{Emp.id}}</td>
+          <td>{{Emp.name}}</td>
+          <td>{{Emp.email}}</td>
+          <td>{{Emp.jobTittle}}</td>
+          <td>{{Emp.phone}}</td>
+          <td>{{Emp.imageUrl}}</td>
+          <td>{{Emp.employeeCode}}</td>
 
         </tr>
       </table>
