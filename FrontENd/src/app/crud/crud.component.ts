@@ -25,14 +25,9 @@ export class CrudComponent implements OnInit{
     "https://e7.pngegg.com/pngimages/348/800/png-clipart-man-wearing-blue-shirt-illustration-computer-icons-avatar-user-login-avatar-blue-child.png",
     "https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png",
     "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-Picture.png",
-    "https://static.vecteezy.com/system/resources/previews/011/675/382/original/man-avatar-image-for-profile-png.png",
-    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngtree.com%2Ffreepng%2Fman-avatar-icon_4356027.html&psig=AOvVaw1zRVNMSn5eO57yWH7XQDJe&ust=1712396001680000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNDtlKziqoUDFQAAAAAdAAAAABAE",
-    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2Fman-avatar-icon-professional-man-character-business-man-avatar-carton-symbol-man-clipart-avatar-man-png-and-vector-with-transparent-background-for-free-downl--376965431314462710%2F&psig=AOvVaw1zRVNMSn5eO57yWH7XQDJe&ust=1712396001680000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCNDtlKziqoUDFQAAAAAdAAAAABAR"
-
+    "https://static.vecteezy.com/system/resources/previews/011/675/382/original/man-avatar-image-for-profile-png.png"
+    
   ];
-
-
-
 
   Employe:any;
  
@@ -54,17 +49,11 @@ export class CrudComponent implements OnInit{
 
   }
 
-
-
   featchData(){
     let response= this.http.get(this.apiUrl_get)
     response.subscribe((data)=>this.Employe=data);
   }
-  
 
-  showvalue(){
-    alert(`${this.Datas[0].name}`)
-  }
   isFormInvalid():boolean{
     return(
     !this.Datas[0].name ||
@@ -95,7 +84,7 @@ export class CrudComponent implements OnInit{
   },err =>{
       console.log(this.Datas[0])
       console.error('Error sending POST request:', err);
-          alert('Error submitting data! Please try again.');
+          alert('Misbehaved.');
 
     })
     
