@@ -45,6 +45,9 @@ header{
     justify-content: center;
     
 }
+fieldset{
+    margin: 5% 12%;
+}
 
 @media screen and (max-width: 600px) {
     .input_section{

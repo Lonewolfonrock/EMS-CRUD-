@@ -30,9 +30,11 @@ export class CrudComponent implements OnInit{
   ];
 
   Employe:any;
+  Employeone:any
  
   
   Datas:data []=[{
+    id:'',
     name:'',
     email:'',
     jobTittle:'Developer',
@@ -40,8 +42,19 @@ export class CrudComponent implements OnInit{
     imageUrl:''
    
   }]
+
+  Datas1:data ={
+    id:'',
+    name:'',
+    email:'',
+    jobTittle:'Developer',
+    phone:'',
+    imageUrl:''
+  }
+
   apiUrl_get = 'http://localhost:8885/';
   apiUrl_post = 'http://localhost:8885/add'
+
 
    constructor(private http: HttpClient) {}
    ngOnInit() {
@@ -59,6 +72,12 @@ export class CrudComponent implements OnInit{
     !this.Datas[0].name ||
     !this.Datas[0].email ||
     !this.Datas[0].phone 
+    )
+  }
+
+  isFormInvalid_id():boolean{
+    return(
+      !this.Datas1.id
     )
   }
 
@@ -90,6 +109,15 @@ export class CrudComponent implements OnInit{
     
   }
 
-
-
+  onSubmit1() {
+    let api_get1 = `http://localhost:8885/${this.Datas1.id}`;
+    this.http.get(api_get1).subscribe(
+      (data) => {
+        this.Employeone = data;
+        alert(JSON.stringify(data));
+      }
+     
+    );
+  }
+  
 }

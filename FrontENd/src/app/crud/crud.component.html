@@ -1,7 +1,7 @@
 <header>
     <h2 class="text-center">TODO APP Spring-Angular</h2>
   </header>
-  <fieldset style="margin: 5% 12%; ">
+  <fieldset>
     <div class="add_div">
         <h2 >Add Employee</h2>
         <div class="input_section" >
@@ -51,6 +51,44 @@
         </tr>
       </table>
     </fieldset>
+</div>
 
+<div class="add_div" style="margin-top: 30px;">
+  <fieldset>
+    <h2>Search Employee</h2>
+    <div class="input_section" style="flex-direction: column;">
+      <div>
+              <label>User id:</label><input type="text"  placeholder="Enter Employee id" id="name1id"  class="in1" [(ngModel)]="Datas1.id">
+      </div>
+      
+      <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>JobTittle</th>
+          <th>Phone</th>
+          <th>Profile</th>
+          <th>EmployeeCode</th>
+        </tr >
+        <tr *ngIf="Employeone">
+          <td>{{ Employeone.id }}</td>
+          <td>{{ Employeone.name}}</td>
+          <td>{{ Employeone.email }}</td>
+          <td>{{ Employeone.jobTittle }}</td>
+          <td>{{ Employeone.phone }}</td>
+          <td><img src="{{Employeone.imageUrl}}" alt="" srcset="" style="width: 50px; height: 50px;"></td>
+          <td>{{ Employeone.employeeCode }}</td>
+        </tr>
+    
+            
+      </table>
+  
+  </div> 
 
+  <div>
+      <button id="b1" type="submit" (click)="onSubmit1()" [disabled]="isFormInvalid_id()" >Get Employee</button>
+  </div>
+
+  </fieldset>
 </div>
