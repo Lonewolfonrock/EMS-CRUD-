@@ -52,6 +52,8 @@ export class CrudComponent implements OnInit{
     imageUrl:''
   }
 
+  
+
   apiUrl_get = 'http://localhost:8885/';
   apiUrl_post = 'http://localhost:8885/add'
 
@@ -109,15 +111,37 @@ export class CrudComponent implements OnInit{
     
   }
 
-  onSubmit1() {
+  Getone() {
     let api_get1 = `http://localhost:8885/${this.Datas1.id}`;
     this.http.get(api_get1).subscribe(
       (data) => {
         this.Employeone = data;
-        alert(JSON.stringify(data));
       }
      
     );
   }
   
+
+  update() {
+    
+    const api_put = `http://localhost:8885/${this.Datas1.id}`;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    let body = JSON.stringify(this.Datas1);
+
+
+    if(this.Datas1.imageUrl===''){
+      
+      this.Datas1.imageUrl=this.avatar[Math.floor(Math.random()*this.avatar.length)];
+      body = JSON.stringify(this.Datas1);
+
+    }
+  
+    this.http.put(api_put, body, { headers }).subscribe(
+      (res) => {
+        alert('Put Success');
+      }
+    );
+  }
+
 }
+

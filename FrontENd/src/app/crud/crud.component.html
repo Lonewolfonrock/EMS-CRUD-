@@ -22,6 +22,8 @@
 
         <div>
             <button id="b1" type="submit" (click)="onSubmit()" [disabled]="isFormInvalid() ||  validatePhone(Datas[0].phone)"  >Add Employee</button>
+            
+            <button id="b1" type="submit" (click)="onSubmit()" [disabled]="isFormInvalid() ||  validatePhone(Datas[0].phone)"  >Update Details</button>
         </div>
     </div>
 </fieldset>
@@ -87,8 +89,37 @@
   </div> 
 
   <div>
-      <button id="b1" type="submit" (click)="onSubmit1()" [disabled]="isFormInvalid_id()" >Get Employee</button>
+      <button id="b1" type="submit" (click)="Getone()" [disabled]="isFormInvalid_id()" >Get Employee</button>
   </div>
 
   </fieldset>
 </div>
+
+
+<fieldset style="padding: 0px 80px;">
+  <div class="add_div" >
+      <h2 >Update Employee</h2>
+      <div class="input_section" >
+          <div>
+          <label>User ID:</label><input type="text"  placeholder="Enter user id to update" id="name1"  [(ngModel)]="Datas1.id" class="in1">
+          </div>
+          <div>
+                  <label>User Name:</label><input type="text"  placeholder="Enter Employee Name" id="name1"  [(ngModel)]="Datas1.name" class="in1">
+          </div>
+          <div>     
+                  <label>User Email:</label><input type="text" placeholder="Enter Employee Email" id="email1"  [(ngModel)]="Datas1.email" class="in1">
+          </div>
+          <div>
+                  <label>User Phone:</label><input type="text" placeholder="Enter Phone Number" id="Phone1" [(ngModel)]="Datas1.phone" class="in1" />
+          </div>
+          <div>
+                  <label>User Image:</label><input type="text" placeholder="Enter image Url or blank" id="image1" [(ngModel)]="Datas1.imageUrl " class="in1"/>      
+          </div>
+      
+      </div> 
+
+      <div>
+          <button id="b1" type="submit" (click)="update()"  >Update</button>
+      </div>
+  </div>
+</fieldset>
